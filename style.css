@@ -1,0 +1,338 @@
+body, h1, h2, p, ul, li, .hashtag {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', 'Roboto', 'Open Sans', Arial, sans-serif; /* Font stack for broader compatibility */
+}
+
+body {
+    background-image: url(Codegreen1.jpg);
+    color: #344C3D; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out; /* Fades in and out smoothly */
+    }
+    
+    /* Classes for handling fade-in and fade-out effects */
+.fade-out {
+        opacity: 0; /* Gradually fades out */
+    }
+    
+    .fade-in {
+        opacity: 1; /* Gradually fades in */
+    }
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(227, 236, 232, 0.1); 
+    z-index: -1; 
+}
+
+/* General header styling */
+/* Adjust header styling */
+header {
+    background-color: #22372d; 
+    color: #FFD700; 
+    border-bottom: 1px solid #6C8776; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    position: relative; 
+}
+
+/* Logo styling to position it closer to the header content */
+.logo-container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically align the items */
+    gap: 10px; /* Add some space between the logo and the text */
+    margin: 0; /* Remove any extra margin */
+    margin-left: 50px;
+}
+
+.logo {
+    width: 75px; /* Adjusted logo size for a better fit */
+    height: auto;
+}
+
+/* Container to center the text */
+.typing-text-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+/* Typing effect styling */
+.typing-text {
+    width: fit-content; /* Automatically adjusts the width to fit the text */
+    max-width: 90vw; /* Ensure it doesn't overflow the viewport */
+    overflow: hidden; /* Hide the text outside the container */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    border-right: 2px solid; /* Cursor effect */
+    text-align: center;
+    animation: typing 2s steps(40) 1s 1 normal both, blink-caret 0.7s step-end infinite; /* Adjusted animation effect */
+}
+
+/* Keyframes for the typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Set to full width to reveal the entire text */
+    }
+}
+
+/* Keyframes for the blinking cursor effect */
+@keyframes blink-caret {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: black; /* Cursor color */
+    }
+}
+
+
+.nav-tabs {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end; /* Aligned navigation items to the right */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 45px;
+}
+
+/* Style for the tab links */
+.tab a {
+    text-decoration: none; 
+    color: #FFD700; /* Default text color */
+    padding: 8px 15px; /* Padding for a better clickable area */
+    position: relative; /* Needed for the pseudo-element */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for the navigation tabs */
+.tab a:hover {
+    color: #FFD700; /* Change text color on hover */
+}
+
+/* Adding an underline effect using a pseudo-element */
+.tab a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Positioning the underline below the text */
+    width: 0; /* Initial width of underline */
+    height: 2px; /* Height of the underline */
+    background-color: #FFD700; /* Color of the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for the underline */
+}
+
+/* Expand underline on hover */
+.tab a:hover::after {
+    width: 100%; /* Full width when hovered */
+    left: 0; /* Align to the left */
+}
+
+/* Dropdown styling improvements */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: fixed;
+    background-color: #0f3923; /* Background color for the dropdown */
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 230px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown on hover */
+}
+
+/* Make sure dropdown does not disrupt the main layout */
+.dropdown-content p, .learn-more-btn {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.learn-more-btn {
+    background-color: #6C8776;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover a {
+    background-color: rgba(108, 135, 118, 0.9); 
+}
+
+
+@keyframes rise {
+    from {
+        transform: translateY(20px); 
+        opacity: 0; 
+    }
+    to {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+main {
+    position: relative; /* Ensures it participates in z-index stacking */
+    flex: 1;
+    padding: 20px 20px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    color: #0f3923;
+    margin-top: 75px;
+    margin-right: 20px;
+    margin-left: 675px;
+    margin-bottom: 80px;
+    text-align: right;
+    border-radius: 35px;
+    animation: rise 0.8s ease-out forwards;
+    opacity: 0;
+    z-index: -1; /* Lower z-index so dropdown can overlay */
+}
+
+.cgph {
+    width: 100px; 
+    height: auto;
+}
+main h2 {
+    font-size: 2.5em; 
+    margin-bottom: 15px; 
+}
+
+main p {
+    font-size: 1.5em; 
+    line-height: 1.5; 
+}
+.youth {
+    text-decoration: underline; /* Underline the text */
+    font-style: italic; /* Italicize the text */
+    color: #FFD700; /* Set the text color to gold */
+}
+footer {
+    background-color:  #22372d; 
+    color: #FFD700; 
+    text-align: center;
+    padding: 0; 
+    font-size: 0.9em;
+    border-top: 3px solid #6C8776; 
+}
+
+footer p {
+    font-size: 0.5em;
+    color: #FFD700;
+    margin: 0;
+
+}
+
+.social-media {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-top: 5px;
+    margin-bottom: 5px; 
+}
+
+.social-icon {
+    width: 30px; /* Smaller size */
+    height: 30px; /* Smaller size */
+    margin-left: 20px; /* Adjusted margin for smaller icons */
+    vertical-align: middle; 
+}
+
+a {
+    text-decoration: none; 
+}
+.copyright {
+    background-color: #0f3923; 
+    color: #FFFFFF; 
+    padding: 10px 0; 
+    margin: 0; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; 
+    }
+
+    .nav-tabs {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .tab {
+        margin: 5px 0; 
+        width: 100%; 
+        text-align: center;
+    }
+
+    .logo-container {
+        position: static; 
+        margin: 10px auto; 
+    }
+
+    .logo {
+        width: 80px; 
+    }
+
+    .menu-panel-container {
+        margin-left: 10px; 
+    }
+
+    .panel-content {
+        width: 100%; 
+        left: 0; 
+    }
+
+    main {
+        margin: 10px;
+        text-align: left; 
+        padding: 15px; 
+    }
+
+    footer {
+        font-size: 0.8em; 
+    }
+
+    .social-media {
+        margin: 10px 0; 
+    }
+
+    .copyright {
+        font-size: 0.7em; 
+    }
+
+    .hashtag {
+        margin: 0; 
+        text-align: center; 
+    }
+
+    .typing-text {
+        font-size: 1em; 
+    }
+}

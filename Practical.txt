@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title">Friendship</title>
+</head>
+<body>
+    <h1 style="text-align: center; font-family: Tahoma; font-size: 18px;"> Friendship</h1>
+    <p>The feeling of friendship from the start<br> 
+        Is that special feeling in your heart <br>
+        A feeling from deep down inside<br>
+        A feeling that no one should hide<br>
+        A friend is there through good and bad<br>
+        They make you happy when you're sad<br>
+        They brighten up your darkest day<br>
+        Just by the simple thing's they say<br>
+        Now  friendship can't be bought or sould<br>
+        It may get tarnished and may get old<br>
+    </p>
+</body>
+</html>

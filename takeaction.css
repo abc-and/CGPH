@@ -1,0 +1,435 @@
+body, h1, h2, p, ul, li, .hashtag {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', 'Roboto', 'Open Sans', Arial, sans-serif; /* Font stack for broader compatibility */
+}
+
+header {
+    background-color:  #22372d;
+    color: #FFD700; 
+    border-bottom: 1px solid #6C8776; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    position: relative; 
+}
+
+/* Logo styling to position it closer to the header content */
+.logo-container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically align the items */
+    gap: 10px; /* Add some space between the logo and the text */
+    margin: 0; /* Remove any extra margin */
+    margin-left: 50px;
+}
+
+.logo {
+    width: 75px; /* Adjusted logo size for a better fit */
+    height: auto;
+}
+
+/* Container to center the text */
+.typing-text-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+/* Typing effect styling */
+.typing-text {
+    width: fit-content; /* Automatically adjusts the width to fit the text */
+    max-width: 90vw; /* Ensure it doesn't overflow the viewport */
+    overflow: hidden; /* Hide the text outside the container */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    border-right: 2px solid; /* Cursor effect */
+    text-align: center;
+    animation: typing 2s steps(40) 1s 1 normal both, blink-caret 0.7s step-end infinite; /* Adjusted animation effect */
+}
+
+/* Keyframes for the typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Set to full width to reveal the entire text */
+    }
+}
+
+/* Keyframes for the blinking cursor effect */
+@keyframes blink-caret {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: black; /* Cursor color */
+    }
+}
+
+
+.nav-tabs {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end; /* Aligned navigation items to the right */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 45px;
+}
+
+/* Style for the tab links */
+.tab a {
+    text-decoration: none; 
+    color: #FFD700; /* Default text color */
+    padding: 8px 15px; /* Padding for a better clickable area */
+    position: relative; /* Needed for the pseudo-element */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for the navigation tabs */
+.tab a:hover {
+    color: #FFD700; /* Change text color on hover */
+}
+
+/* Adding an underline effect using a pseudo-element */
+.tab a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Positioning the underline below the text */
+    width: 0; /* Initial width of underline */
+    height: 2px; /* Height of the underline */
+    background-color: #FFD700; /* Color of the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for the underline */
+}
+
+/* Expand underline on hover */
+.tab a:hover::after {
+    width: 100%; /* Full width when hovered */
+    left: 0; /* Align to the left */
+}
+
+/* Dropdown styling improvements */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: fixed;
+    background-color: #0f3923; /* Background color for the dropdown */
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown on hover */
+}
+
+/* Make sure dropdown does not disrupt the main layout */
+.dropdown-content p, .learn-more-btn {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.learn-more-btn {
+    background-color: #6C8776;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover a {
+    background-color: rgba(108, 135, 118, 0.9); 
+}
+
+/* Main content styling */
+/* General Styling */
+/* General Styling */
+body, main {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f3;
+    color: #344C3D;
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    background-image: url(takeaction.jpg); /* Ensure this path is correct */
+    background-size: cover; /* Make the background cover the entire screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-attachment: fixed; /* Fix the background image during scrolling */
+    min-height: 75vh; 
+    padding: 30px;
+    text-align: center;
+    color: #FFFFFF; /* White text color for contrast */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack children vertically */
+    overflow-x: hidden;
+    font-family: 'Merriweather', serif; 
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Darker overlay for better contrast */
+    backdrop-filter: blur(5px); /* Add a blur effect to the overlay */
+    z-index: 1; /* Place overlay behind content */
+    overflow-x: hidden;
+}
+
+main * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+
+.quote-section {
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 75vh; /* Minimum height to keep it centered */
+    width: 100%; /* Full width of the viewport */
+    padding: 5px; /* Add some padding */
+    max-width: 1000px; /* Increase the max width */
+    margin: 0 auto; /* Center horizontally in case of max-width */
+    border-radius: 10px; /* Round the corners */
+    animation: fadeInUp 1.2s ease-in-out; /* Animation for quote */
+    opacity: 0; /* Start as invisible */
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+    position: relative; /* Set position to allow z-index to work */
+    margin-bottom: 75px;
+}
+
+.quote {
+    font-family: 'Merriweather', serif; /* Suitable font for quotes */
+    font-size: 3em; /* Increase font size for emphasis */
+    color: #FFD700; /* Gold color for text */
+    font-weight: bold; /* Bold font weight */
+    line-height: 1.5; /* Increase line height for better readability */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the quote text */
+    z-index: 3; /* Ensure the quote is on top */
+}
+
+.quote-author {
+    display: block; /* Display author on a new line */
+    font-family: 'Merriweather', serif; /* Clean font for author's name */
+    font-size: 0.5em; /* Smaller font size for the author */
+    color: #FFD700; /* Gold color for author's name */
+    margin-top: 10px; /* Space above author name */
+    text-align: center; /* Center the author's name */
+    z-index: 2; /* Ensure author text is below the quote */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(30px); /* Move down 30px */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* Back to original position */
+    }
+}
+
+.beacrusader {
+    font-family: 'Merriweather', serif; /* Ensure the font is correctly referenced */
+    font-size: 30px; /* Increase font size for emphasis */
+    color: gold; /* Text color */
+    margin-bottom: 30px; /* Bottom margin */
+    transition: color 0.3s, text-decoration 0.3s; /* Smooth transition for hover effects */
+}
+
+.beacrusader:hover {
+    color: #22372d; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.card-container {
+    display: flex; /* Aligns cards horizontally */
+    justify-content: center; /* Centers the cards */
+    gap: 0; /* No space between cards */
+}
+
+.card {
+    width: 600px; /* Increased width for the card */
+    height: 650px; /* Increased height for the card */
+    perspective: 1000px; /* Gives a 3D effect */
+    margin: 0; /* No margin for cards */
+    overflow: hidden;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s; /* Animation effect for flipping */
+    transform-style: preserve-3d; /* Allows for 3D transformation */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg); /* Flips the card on hover */
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back face when flipped */
+}
+
+.card-back {
+    transform: rotateY(180deg); /* Shows the back when flipped */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image {
+    width: 100%; /* Ensures the image fills the card */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures image covers the card */
+}
+
+.action-button {
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 16px; /* Font size for the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: gold; /* Gold background color */
+    color: #22372d; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Smooth transition effects */
+    text-align: center; /* Center text inside button */
+    display: inline-block; /* Allow button to be inline */
+}
+
+.action-button:hover {
+    background-color: #22372d; /* Dark color on hover */
+    color: gold; /* Change text color to gold on hover */
+    transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
+footer {
+    background-color:  #22372d; 
+    color: #FFD700; 
+    text-align: center;
+    padding: 0; 
+    font-size: 0.9em;
+    border-top: 3px solid #6C8776; 
+}
+
+footer p {
+    font-size: 0.5em;
+    color: #FFD700;
+    margin: 0;
+
+}
+
+.social-media {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-top: 5px;
+    margin-bottom: 5px; 
+}
+
+.social-icon {
+    width: 30px; /* Smaller size */
+    height: 30px; /* Smaller size */
+    margin-left: 20px; /* Adjusted margin for smaller icons */
+    vertical-align: middle; 
+}
+
+a {
+    text-decoration: none; 
+}
+.copyright {
+    background-color: #0f3923; 
+    color: #FFFFFF; 
+    padding: 10px 0; 
+    margin: 0; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; 
+    }
+
+    .nav-tabs {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .tab {
+        margin: 5px 0; 
+        width: 100%; 
+        text-align: center;
+    }
+
+    .logo-container {
+        position: static; 
+        margin: 10px auto; 
+    }
+
+    .logo {
+        width: 80px; 
+    }
+
+    .menu-panel-container {
+        margin-left: 10px; 
+    }
+
+    .panel-content {
+        width: 100%; 
+        left: 0; 
+    }
+
+    main {
+        margin: 10px;
+        text-align: left; 
+        padding: 15px; 
+    }
+
+    footer {
+        font-size: 0.8em; 
+    }
+
+    .social-media {
+        margin: 10px 0; 
+    }
+
+    .copyright {
+        font-size: 0.7em; 
+    }
+
+    .hashtag {
+        margin: 0; 
+        text-align: center; 
+    }
+
+    .typing-text {
+        font-size: 1em; 
+    }
+}

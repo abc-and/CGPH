@@ -1,0 +1,832 @@
+body, h1, h2, p, ul, li, .hashtag {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', 'Roboto', 'Open Sans', Arial, sans-serif; /* Font stack for broader compatibility */
+}
+
+
+header {
+    background-color:  #22372d;
+    color: #FFD700; 
+    border-bottom: 1px solid #6C8776; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    position: relative; 
+}
+
+/* Logo styling to position it closer to the header content */
+.logo-container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically align the items */
+    gap: 10px; /* Add some space between the logo and the text */
+    margin: 0; /* Remove any extra margin */
+    margin-left: 50px;
+}
+
+.logo {
+    width: 75px; /* Adjusted logo size for a better fit */
+    height: auto;
+}
+
+/* Container to center the text */
+.typing-text-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+/* Typing effect styling */
+.typing-text {
+    width: fit-content; /* Automatically adjusts the width to fit the text */
+    max-width: 90vw; /* Ensure it doesn't overflow the viewport */
+    overflow: hidden; /* Hide the text outside the container */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    border-right: 2px solid; /* Cursor effect */
+    text-align: center;
+    animation: typing 2s steps(40) 1s 1 normal both, blink-caret 0.7s step-end infinite; /* Adjusted animation effect */
+}
+
+/* Keyframes for the typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Set to full width to reveal the entire text */
+    }
+}
+
+/* Keyframes for the blinking cursor effect */
+@keyframes blink-caret {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: black; /* Cursor color */
+    }
+}
+
+
+.nav-tabs {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end; /* Aligned navigation items to the right */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 45px;
+}
+
+/* Style for the tab links */
+.tab a {
+    text-decoration: none; 
+    color: #FFD700; /* Default text color */
+    padding: 8px 15px; /* Padding for a better clickable area */
+    position: relative; /* Needed for the pseudo-element */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for the navigation tabs */
+.tab a:hover {
+    color: #FFD700; /* Change text color on hover */
+}
+
+/* Adding an underline effect using a pseudo-element */
+.tab a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Positioning the underline below the text */
+    width: 0; /* Initial width of underline */
+    height: 2px; /* Height of the underline */
+    background-color: #FFD700; /* Color of the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for the underline */
+}
+
+/* Expand underline on hover */
+.tab a:hover::after {
+    width: 100%; /* Full width when hovered */
+    left: 0; /* Align to the left */
+}
+
+/* Dropdown styling improvements */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: fixed;
+    background-color: #0f3923; /* Background color for the dropdown */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown on hover */
+}
+
+/* Make sure dropdown does not disrupt the main layout */
+.dropdown-content p, .learn-more-btn {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.learn-more-btn {
+    background-color: #6C8776;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover a {
+    background-color: rgba(108, 135, 118, 0.9); 
+}
+
+/* Main content styling */
+/* General Styling */
+/* General Styling */
+body, main {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f3;
+    color: #344C3D;
+    overflow-x: hidden;
+}
+
+main {
+    background-image: url(plants.jpg);
+    background-size: cover; /* Make the background cover the entire screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-attachment: fixed; /* Fix the background image during scrolling */
+    min-height: 100vh; 
+    padding: 30px;
+    text-align: center;
+    color: #FFD700;
+}
+
+
+.parent-container {
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center the text content */
+    align-items: flex-start; /* Align items to the top */
+    padding: 40px; /* Add more padding for a balanced layout */
+    margin-top: 20px; /* Add margin to move the text down */
+    margin-bottom: 10px;
+}
+
+.text-content {
+    max-width: 1000px; /* Increase the max width */
+    padding: 20px; /* Add some padding inside the text box */
+    display: flex; /* Enable flexbox layout for children */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: flex-start; /* Align items to the start */
+    max-height: 600px; /* Increase the max height */
+    position: relative; /* Allows absolute positioning if needed */
+    animation: fadeInUp 1.2s ease-in-out; /* Slightly longer animation */
+    opacity: 0; /* Start as invisible */
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+    border-radius: 10px; /* Round the corners of the text container */
+    margin-bottom: 55px;
+    background-color: rgba(34, 55, 45, 0.5); 
+}
+
+.text-content h2.section-title {
+    font-size: 42px; /* Make the title bigger */
+    font-weight: bold; /* Bold title */
+    color:  #FFD700; /* Use a rich dark color */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add space below the title */
+    letter-spacing: 2px; /* Add some spacing between letters */
+    text-transform: uppercase; /* Make the title all caps */
+    text-decoration: underline; /* Add underline on hover */
+    margin-bottom: 30px;
+}
+.text-content h2.section-title:hover {
+    color: #22372d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.highlighted-text:hover {
+    color: #22372d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.text-content p.section-text {
+    font-size: 26px; /* Make the paragraph text bigger */
+    line-height: 1.8; /* Increase line height for readability */
+    color: #FFD700; /* Softer dark color for the paragraph */
+    text-align: center; /* Justify the paragraph text */
+    letter-spacing: 1px; /* Add slight letter spacing */
+    font-weight: bold;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(30px); /* Move down 30px */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* Back to original position */
+    }
+}
+
+
+
+
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-titleMSV {
+    font-size: 42px; /* Make the title bigger */
+    font-weight: bold; /* Bold title */
+    color: #FFD700; /* Use a rich dark color */
+    text-align: center; /* Center the title */
+    margin-bottom: 45px; /* Add space below the title */
+    letter-spacing: 2px; /* Add some spacing between letters */
+    text-transform: uppercase; /* Make the title all caps */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Add hover effect for the title */
+.section-titleMSV:hover {
+    color: #22372d; /* Change color on hover */
+    font-weight: bold; /* Ensure the title remains bold */
+    text-decoration: underline; /* Keep underline on hover */
+}
+
+
+.flip-container {
+    perspective: 1000px;
+    display: inline-block;
+    margin: 20px;
+    margin-bottom: 55px;
+}
+
+.flip-card-inner {
+    width: 500px; /* Set width for the flip card */
+    height: 300px; /* Set height for the flip card */
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 55px;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    font-size: 22px;
+    width: 100%; /* Ensure the front and back fill the card */
+    height: 100%; /* Ensure the front and back fill the card */
+    margin-bottom: 50px;
+}
+
+.flip-card-front {
+    width: 100%;
+    height: 100%;
+}
+
+.flip-card-back {
+    background-color: #22372d; /* Background color for back */
+    color: #FFD700; /* Font color for back */
+    display: flex; /* Center the content */
+    flex-direction: column; /* Stack title and text */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 20px; /* Padding for the back content */
+    transform: rotateY(180deg); /* Rotate back */
+    margin-bottom: 50px;
+}
+
+.flip-container:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flip effect */
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow if necessary */
+    border-radius: 10px; /* Optional: rounded corners */
+    margin-bottom: 50px;
+}
+
+.section-image {
+    width: 100%; /* Make the image cover the container */
+    height: 100%; /* Ensure the image fills the height */
+    object-fit: cover; /* Keep the aspect ratio */
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif; /* Font style */
+    font-size: 24px; /* Title size */
+    margin-bottom: 50px; /* Space below title */
+    text-align: center; /* Center title */
+}
+
+.section-text {
+    font-family: 'Montserrat', sans-serif; /* Font style */
+    font-size: 16px; /* Text size */
+    text-align: center; /* Center text */
+    padding: 0 10px; /* Padding for text */
+    margin-bottom: 50px; /* Space below title */
+
+}
+/*goals*/
+.goals-principles-section h2.sectiongoals {
+    font-size: 42px; /* Make the title bigger */
+    font-weight: bold; /* Bold title */
+    color:  #FFD700; /* Use a rich dark color */
+    text-align: center; /* Center the title */
+    margin-bottom: 45px; /* Add space below the title */
+    letter-spacing: 2px; /* Add some spacing between letters */
+    text-transform: uppercase; /* Make the title all caps */
+    text-decoration: underline; /* Add underline on hover */
+}
+.goals-principles-section h2.sectiongoals:hover{
+    color: #22372d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* General styling for goal boxes */
+.goal-box {
+    position: relative;
+    width: 600px;
+    height: 80px;
+    background-color: #22372d; /* Soft green background */
+    margin: 20px auto; /* Center and space out the rectangles */
+    border-radius: 30px; /* Rounded corners */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    padding-left: 80px; /* Closer to the image */
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.5s ease-in-out; /* Fade in effect */
+    margin-bottom: 55px;
+    border: 3px solid #FFFFFF;
+}
+
+/* Styling for the text inside the rectangles */
+.goal-text {
+    font-size: 16px;
+    color: #FFD700; /* White text for contrast */
+    margin: 0; /* Remove default margins */
+    text-align: left; /* Align text to the left */
+    font-weight: bold; /* Bold text */
+}
+
+/* Circle image styling */
+.goal-img {
+    position: absolute;
+    left: -40px; /* Overlap the rectangle */
+    width: 80px; /* Circle size */
+    height: 80px;
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure image fits within the circle */
+    border: 4px solid #fff; /* White border around the circle */
+    z-index: 1000;
+}
+
+/* Animation keyframes for sliding from the left */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation keyframes for sliding from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Specific animations for each box */
+.goal-box.box1 {
+    animation: slideInLeft 1s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.goal-box.box2 {
+    animation: slideInRight 1s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.goal-box.box3 {
+    animation: slideInLeft 1s ease-in-out forwards;
+    animation-delay: 0.9s;
+    margin-bottom: 50px;
+}
+/* Initially hide the boxes with an opacity and small transform */
+/* Initial state (hidden) */
+.goal-box {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state (when scrolled into view) */
+.goal-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.aboutlogo-section {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center; /* Center aligns all content in the section */
+    margin-top: 50px; /* Adjust margin as needed */
+}
+
+.section-titlelogo {
+    font-size: 42px; /* Make the title bigger */
+    font-weight: bold; /* Bold title */
+    color: #FFD700; /* Use a rich dark color */
+    text-align: center; /* Center the title */
+    margin-top: 45px; /* Add space below the title */
+    letter-spacing: 2px; /* Add some spacing between letters */
+    text-transform: uppercase; /* Make the title all caps */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+}
+
+.section-titlelogo:hover {
+    color: #22372d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.aboutlogo-container {
+    display: flex;
+    align-items: center; /* Centers items vertically */
+}
+
+.left-rectangles,
+.right-rectangles {
+    display: flex;
+    flex-direction: column; /* Aligns rectangles vertically */
+    align-items: center; /* Centers rectangles horizontally */
+    margin-bottom:20px;
+}
+
+.flip-containerlogo {
+    perspective: 1000px;
+    display: inline-block;
+    margin: 20px; /* Space between flip cards */
+}
+
+.flip-card-innerlogo {
+    width: 300px; /* Set width for the flip card */
+    height: 150px; /* Set height for the flip card */
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; /* Added border radius for the entire card */
+    margin-bottom:20px;
+    border: 3px solid #22372d;
+}
+
+.flip-card-frontlogo, .flip-card-backlogo {
+    position: absolute;
+    backface-visibility: hidden; /* Hides the back when facing away */
+    border-radius: 10px; /* Keep corners rounded */
+    width: 100%; /* Ensure the front and back fill the card */
+    height: 100%; /* Ensure the front and back fill the card */
+    display: flex; /* Center the content */
+    justify-content: flex-start; /* Center horizontally */
+    align-items:flex-start; /* Center vertically */
+    text-align: center; /* Center align text */
+    margin-bottom:20px;
+ 
+}
+
+.flip-card-frontlogo {
+    background-color: #22372d; /* Background color for front */
+    color: #FFD700; /* Text color for front */
+    font-family: 'Arial', sans-serif; /* Font style for front */
+    padding: 20px; /* Padding for the front content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    display: flex; /* Use flexbox to align items */
+    flex-direction: column; /* Stack items vertically */
+    justify-content:flex-start; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center align text */
+    border-radius: 10px; /* Keep corners rounded */
+    border: 3px solid #FFFFFF;
+}
+
+.flip-card-frontlogo h3 {
+    font-size: 24px; /* Increase font size for the title */
+    font-weight: bold; /* Make the title bold */
+    margin-bottom: 5px; /* Space below the title */
+    letter-spacing: 1px; /* Add spacing between letters for aesthetic */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+}
+
+.flip-card-frontlogo p {
+    font-size: 16px; /* Font size for description */
+    margin: 0; /* Remove default margin */
+    line-height: 1.5; /* Add line height for better readability */
+    opacity: 0.9; /* Slightly transparent for a softer look */
+}
+
+
+.flip-card-backlogo {
+    background-color: #FFFFFF; /* Background color for back */
+    color: #22372d; /* Font color for back */
+    display:flexbox; /* Center the content */
+    flex-direction: column; /* Stack title and text */
+    justify-content: flex-start;/* Center vertically */
+    align-items: flex-start; /* Center horizontally */
+    padding: 20px; /* Padding for the back content */
+    transform: rotateY(180deg); /* Rotate back */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+.flip-containerlogo:hover .flip-card-innerlogo {
+    transform: rotateY(180deg); /* Flip effect */
+}
+
+.aboutlogo {
+    width: 600px; /* Logo width */
+    height: 600px; /* Logo height */
+    margin: 0 10px; /* Space on the sides of the logo */
+    margin-top: 5px;
+}
+
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-titleval {
+    font-size: 42px;
+    color: #FFD700;
+    margin-bottom: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 45px;
+}
+
+.section-titleval:hover{
+    color: #22372d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.value-item {
+    position: relative;
+    text-align: center;
+}
+
+.triangle-image img {
+    width: 175px;
+    height: auto;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.value-square {
+    margin-top: 45px;;
+    background-color: #22372d;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 40px 20px;
+    box-shadow: #22372d;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.value-square h3 {
+    font-size: 1.8em;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.value-square p {
+    font-size: 1.1em;
+    color: #FFD700;
+    max-width: 300px;
+}
+
+
+/*Our Team*/
+.team-section {
+    padding: 40px 20px; /* Padding for spacing */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    position: relative; /* Position for absolute elements */
+}
+
+.content-wrapperteam {
+    max-width: 1200px; /* Max width for the content wrapper */
+    margin: 0 auto; /* Center the wrapper */
+}
+
+.section-titleteam {
+    margin-top: 45px;
+    color: #FFD700; /* Title color */
+    font-size: 42px; /* Title font size */
+    margin-bottom: 45px; /* Space below title */
+    text-align: center; /* Center the title */
+}
+
+.section-titleteam:hover {
+    color: #22372d; /* Hover color for title */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center; /* Center items */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    gap: 10px; /* Space between team members */
+}
+
+.team-member {
+    position: relative; /* Position relative for stacking context */
+    overflow: hidden; /* Hide overflow for images */
+    transition: transform 0.3s; /* Smooth transition for scaling */
+    width: 200px; /* Width of each team member */
+    height: 90px; /* Height of each team member */
+    border-radius: 10px; /* Rounded corners for the team member card */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Light shadow for the card */
+}
+
+.member-image {
+    height: 100%; /* Make image container take up full height */
+    border-radius: 10px; /* Rounded corners for the image container */
+    overflow: hidden; /* Hide overflow for rounded corners */
+}
+
+.member-image img {
+    width: 100%; /* Responsive image width */
+    height: 100%; /* Make image fill the container */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease; /* Smooth transition for image scaling */
+}
+
+/* Hover effect to show the enlarged image */
+.team-member:hover .member-image img {
+    position: fixed; /* Fix position to viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) scale(1); /* Center and scale */
+    z-index: 1000; /* Bring it above the overlay */
+    height: 500px; /* Set height on hover */
+    width: 950px; /* Set width on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    border-radius: 15px; /* Rounded corners on hover */
+}
+
+
+footer {
+    background-color:  #22372d; 
+    color: #FFD700; 
+    text-align: center;
+    padding: 0; 
+    font-size: 0.9em;
+    border-top: 3px solid #6C8776; 
+}
+
+footer p {
+    font-size: 0.5em;
+    color: #FFD700;
+    margin: 0;
+
+}
+
+.social-media {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-top: 5px;
+    margin-bottom: 5px; 
+}
+
+.social-icon {
+    width: 30px; /* Smaller size */
+    height: 30px; /* Smaller size */
+    margin-left: 20px; /* Adjusted margin for smaller icons */
+    vertical-align: middle; 
+}
+
+a {
+    text-decoration: none; 
+}
+.copyright {
+    background-color: #0f3923; 
+    color: #FFFFFF; 
+    padding: 10px 0; 
+    margin: 0; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; 
+    }
+
+    .nav-tabs {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .tab {
+        margin: 5px 0; 
+        width: 100%; 
+        text-align: center;
+    }
+
+    .logo-container {
+        position: static; 
+        margin: 10px auto; 
+    }
+
+    .logo {
+        width: 80px; 
+    }
+
+    .menu-panel-container {
+        margin-left: 10px; 
+    }
+
+    .panel-content {
+        width: 100%; 
+        left: 0; 
+    }
+
+    main {
+        margin: 10px;
+        text-align: left; 
+        padding: 15px; 
+    }
+
+    footer {
+        font-size: 0.8em; 
+    }
+
+    .social-media {
+        margin: 10px 0; 
+    }
+
+    .copyright {
+        font-size: 0.7em; 
+    }
+
+    .hashtag {
+        margin: 0; 
+        text-align: center; 
+    }
+
+    .typing-text {
+        font-size: 1em; 
+    }
+}

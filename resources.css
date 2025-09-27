@@ -1,0 +1,508 @@
+body, h1, h2, p, ul, li, .hashtag {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', 'Roboto', 'Open Sans', Arial, sans-serif; /* Font stack for broader compatibility */
+}
+
+header {
+    background-color:  #22372d;
+    color: #FFD700; 
+    border-bottom: 1px solid #6C8776; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    position: relative; 
+}
+
+/* Logo styling to position it closer to the header content */
+.logo-container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically align the items */
+    gap: 10px; /* Add some space between the logo and the text */
+    margin: 0; /* Remove any extra margin */
+    margin-left: 50px;
+}
+
+.logo {
+    width: 75px; /* Adjusted logo size for a better fit */
+    height: auto;
+}
+
+/* Container to center the text */
+.typing-text-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+/* Typing effect styling */
+.typing-text {
+    width: fit-content; /* Automatically adjusts the width to fit the text */
+    max-width: 90vw; /* Ensure it doesn't overflow the viewport */
+    overflow: hidden; /* Hide the text outside the container */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    border-right: 2px solid; /* Cursor effect */
+    text-align: center;
+    animation: typing 2s steps(40) 1s 1 normal both, blink-caret 0.7s step-end infinite; /* Adjusted animation effect */
+}
+
+/* Keyframes for the typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Set to full width to reveal the entire text */
+    }
+}
+
+/* Keyframes for the blinking cursor effect */
+@keyframes blink-caret {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: black; /* Cursor color */
+    }
+}
+
+
+.nav-tabs {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end; /* Aligned navigation items to the right */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 45px;
+}
+
+/* Style for the tab links */
+.tab a {
+    text-decoration: none; 
+    color: #FFD700; /* Default text color */
+    padding: 8px 15px; /* Padding for a better clickable area */
+    position: relative; /* Needed for the pseudo-element */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for the navigation tabs */
+.tab a:hover {
+    color: #FFD700; /* Change text color on hover */
+}
+
+/* Adding an underline effect using a pseudo-element */
+.tab a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Positioning the underline below the text */
+    width: 0; /* Initial width of underline */
+    height: 2px; /* Height of the underline */
+    background-color: #FFD700; /* Color of the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for the underline */
+}
+
+/* Expand underline on hover */
+.tab a:hover::after {
+    width: 100%; /* Full width when hovered */
+    left: 0; /* Align to the left */
+}
+
+/* Dropdown styling improvements */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: fixed;
+    background-color: #0f3923; /* Background color for the dropdown */
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown on hover */
+}
+
+/* Make sure dropdown does not disrupt the main layout */
+.dropdown-content p, .learn-more-btn {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.learn-more-btn {
+    background-color: #6C8776;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover a {
+    background-color: rgba(108, 135, 118, 0.9); 
+}
+
+/* General Styling */
+/* General Styling */
+main {
+    padding: 40px;
+    background-image: url(b.jpg);
+    background-size: cover; /* Ensure the image covers the background */
+    background-position: center; /* Center the background image */
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.5em; /* Increased font size for better visibility */
+    margin-bottom: 75px; /* Increased bottom margin */
+}
+h2:hover {
+    font-family: 'Arial', sans-serif;
+    color: #FFD700;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2.5em; /* Increased font size for better visibility */
+    margin-bottom: 75px; /* Increased bottom margin */
+}
+
+
+/* Carousel Container */
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    max-height: 1000px;
+    margin: 0 auto;
+    overflow: hidden; /* Hide overflow */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly less transparent for contrast */
+    border-radius: 15px; /* Rounded corners */
+    margin-bottom: 200px;
+    padding: 10px; /* Padding for space inside the container */
+    box-sizing: border-box; /* Include padding in total width and height */
+}
+.carousel-container .greengazette{
+    position: relative;
+    max-width: 1200px;
+    max-height: 1000px;
+    margin: 0 auto;
+    overflow: hidden; /* Hide overflow */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly less transparent for contrast */
+    border-radius: 15px; /* Rounded corners */
+    margin-bottom: 200px;
+    padding: 10px; /* Padding for space inside the container */
+    box-sizing: border-box; /* Include padding in total width and height */
+}
+/* Carousel Wrapper */
+.carousel-wrapper {
+    overflow: hidden; /* Ensure only visible slides are shown */
+    width: 100%;
+    padding: 20px; /* Uniform padding around the wrapper */
+    box-sizing: border-box; /* Include padding in total width */
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: center; /* Center slides horizontally */
+    align-items: center; /* Center slides vertically */
+}
+
+/* Carousel Track */
+.carousel-track {
+    display: flex; /* Aligns slides horizontally */
+    transition: transform 0.5s ease;
+}
+
+/* Carousel Slide - Display 3 topics at a time */
+.carousel-slide {
+    flex: 0 0 calc(100% / 3); /* Each slide takes up 1/3 of the wrapper */
+    box-sizing: border-box; /* Include padding/borders in width */
+    padding: 20px; /* Padding around slides */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Common Slide Content Styling */
+.slide-content {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 20px; /* More padding for a spacious look */
+    background-color: #22372d; /* Slightly transparent for softness */
+    border-radius: 15px;
+    height: 100%; /* Ensure consistent height */
+    width: 100%; /* Ensure it takes full width of the slide */
+    max-width: 300px; /* Set a maximum width for the content */
+}
+
+
+/* Let's Talk Now Styling - Text Left, Image Right */
+.letstaknown .text-content {
+    order: 1;
+    width: 50%;
+    padding-right: 30px; /* Increased right padding */
+    font-family: 'Verdana', sans-serif;
+    color: #333;
+}
+
+.letstaknown .image-content {
+    order: 2;
+    width: 50%;
+    text-align: center;
+}
+
+.letstaknown .image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* The Green Gazette Styling - Image Left, Text Right */
+.greengazette .image-content {
+    order: 1; /* Image on left */
+    width: 50%; /* Half width */
+    text-align: center;
+    padding-right: 5px; /* Increased space */
+}
+
+.greengazette .text-content {
+    order: 2; /* Text on right */
+    width: 50%; /* Half width */
+    padding-left: 5px; /* Increased space */
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.greengazette .image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Text Content Styling */
+.text-content h3 {
+    font-size: 1.0em; /* Slightly larger for emphasis */
+    color: #FFD700;
+    margin-bottom: 15px; /* Increased bottom margin */
+    text-align:start;
+}
+
+.text-content p {
+    font-size: 0.75em;
+    line-height: 1.6;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    text-align:start;
+    margin-right: 3px;
+}
+
+/* Common Button Styling */
+.learn-more-btnltk, .learn-more-btnltk2, .learn-more-btnltk3, .learn-more-btnltk4, .learn-more-btnltk5 , .learn-more-btngg1, .learn-more-btngg2, .learn-more-btngg3, .learn-more-btngg4, .learn-more-btngg5 {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the content horizontally */
+}
+
+.learn-more-btnltk, .learn-more-btnltk2, .learn-more-btnltk3, .learn-more-btnltk4, .learn-more-btnltk5 ,.learn-more-btngg1, .learn-more-btngg2, .learn-more-btngg3, .learn-more-btngg4, .learn-more-btngg5   {
+    padding: 5px 10px; /* Adjusted padding for better appearance */
+    background-color: #4caf50; /* Solid green background */
+    color: #ffffff; /* White text for contrast */
+    text-decoration: none;
+    font-size: 1em; /* Standard font size */
+    border-radius: 20px; /* Rounded corners for a modern look */
+    border: none; /* Remove any borders */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+    text-align: center; /* Center the text */
+    align-items: center;
+    position: relative;
+}
+
+.learn-more-btnltk, .learn-more-btnltk2, .learn-more-btnltk3, .learn-more-btnltk4, .learn-more-btnltk5 :hover, .learn-more-btngg1, .learn-more-btngg2, .learn-more-btngg3, .learn-more-btngg4, .learn-more-btngg5 :hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly grow on hover for interactivity */
+}
+/* Carousel Button Styling */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #4caf50; /* Solid green background */
+    color: #ffffff; /* White text for contrast */
+    border: none;
+    border-radius: 50%; /* Circle shape */
+    font-size: 18px; /* Font size for icons */
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition effects */
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.1); /* Slightly grow on hover for interactivity */
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.learn-more-btnltk, .learn-more-btnltk2, .learn-more-btnltk3, .learn-more-btnltk4, .learn-more-btnltk5 {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fullscreen overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Ensures it stays above other content */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    overflow: scroll;
+}
+
+.image-stack {
+    position: relative;
+    margin: auto;
+    top: 25%;
+    width: 60%;
+    text-align: center;
+}
+
+.image-stack img {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+footer {
+    background-color:  #22372d; 
+    color: #FFD700; 
+    text-align: center;
+    padding: 0; 
+    font-size: 0.9em;
+    border-top: 3px solid #6C8776; 
+}
+
+footer p {
+    font-size: 0.5em;
+    color: #FFD700;
+    margin: 0;
+
+}
+
+.social-media {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-top: 5px;
+    margin-bottom: 5px; 
+}
+
+.social-icon {
+    width: 30px; /* Smaller size */
+    height: 30px; /* Smaller size */
+    margin-left: 20px; /* Adjusted margin for smaller icons */
+    vertical-align: middle; 
+}
+
+a {
+    text-decoration: none; 
+}
+.copyright {
+    background-color: #0f3923; 
+    color: #FFFFFF; 
+    padding: 10px 0; 
+    margin: 0; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; 
+    }
+
+    .nav-tabs {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .tab {
+        margin: 5px 0; 
+        width: 100%; 
+        text-align: center;
+    }
+
+    .logo-container {
+        position: static; 
+        margin: 10px auto; 
+    }
+
+    .logo {
+        width: 80px; 
+    }
+
+    .menu-panel-container {
+        margin-left: 10px; 
+    }
+
+    .panel-content {
+        width: 100%; 
+        left: 0; 
+    }
+
+    main {
+        margin: 10px;
+        text-align: left; 
+        padding: 15px; 
+    }
+
+    footer {
+        font-size: 0.8em; 
+    }
+
+    .social-media {
+        margin: 10px 0; 
+    }
+
+    .copyright {
+        font-size: 0.7em; 
+    }
+
+    .hashtag {
+        margin: 0; 
+        text-align: center; 
+    }
+
+    .typing-text {
+        font-size: 1em; 
+    }
+}
