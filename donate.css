@@ -6,8 +6,8 @@ body, h1, h2, p, ul, li, .hashtag {
 }
 
 header {
-    background-color:  #22372d;
-    color: #FFD700; 
+    background-color:  #1ee283;
+    color: #436b29; 
     border-bottom: 1px solid #6C8776; 
     display: flex;
     justify-content: space-between;
